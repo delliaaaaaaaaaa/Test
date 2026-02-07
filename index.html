@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Найди свое хобби</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка -->
+        <header class="site-header">
+            <div class="logo">
+                <i class="fas fa-compass"></i>
+                <span>HobbyFinder</span>
+            </div>
+        </header>
+
+        <!-- Прогресс-бар -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="progress-step active"><i class="fas fa-home"></i></div>
+            <div class="progress-step"><span>1</span></div>
+            <div class="progress-step"><span>2</span></div>
+            <div class="progress-step"><span>3</span></div>
+            <div class="progress-step"><span>4</span></div>
+            <div class="progress-step"><span>5</span></div>
+            <div class="progress-step"><span>6</span></div>
+            <div class="progress-step"><i class="fas fa-flag-checkered"></i></div>
+        </div>
+
+        <!-- Страницы -->
+        <div class="pages-container">
+            <!-- Страница 1: Введение -->
+            <div class="page active" id="page1">
+                <div class="page-content intro-page">
+                    <div class="main-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h1>Найди своё идеальное хобби</h1>
+                    <p class="intro-text">
+                        Ответьте на 6 простых вопросов, и мы подберем увлечение, которое идеально подойдет именно вам.
+                    </p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-brain"></i>
+                            <h3>Умный подбор</h3>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-gem"></i>
+                            <h3>50+ вариантов</h3>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Точные результаты</h3>
+                        </div>
+                    </div>
+                    
+                    <button class="btn start-btn" onclick="nextPage()">
+                        Начать тест <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Вопрос 1 -->
+            <div class="page" id="page2">
+                <div class="page-content question-page">
+                    <div class="question-header">
+                        <span class="question-number">Вопрос 1 из 6</span>
+                        <h2>Как вы проводите свободное время?</h2>
+                        <div class="question-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 'social')">
+                            <div class="option-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>В компании друзей</h3>
+                            <p>Общение, вечеринки, совместные активности</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'creative')">
+                            <div class="option-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3>Творчество</h3>
+                            <p>Рисование, музыка, создание чего-либо</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'active')">
+                            <div class="option-icon">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <h3>Активный отдых</h3>
+                            <p>Спорт, прогулки, физическая активность</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'home')">
+                            <div class="option-icon">
+                                <i class="fas fa-couch"></i>
+                            </div>
+                            <h3>Домашний отдых</h3>
+                            <p>Чтение, фильмы, спокойный отдых</p>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-buttons">
+                        <button class="btn btn-back" onclick="prevPage()">
+                            <i class="fas fa-arrow-left"></i> Назад
+                        </button>
+                        <button class="btn" onclick="nextPage()">
+                            Далее <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вопрос 2 -->
+            <div class="page" id="page3">
+                <div class="page-content question-page">
+                    <div class="question-header">
+                        <span class="question-number">Вопрос 2 из 6</span>
+                        <h2>Что приносит вам удовлетворение?</h2>
+                        <div class="question-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 'achievement')">
+                            <div class="option-icon">
+                                <i class="fas fa-flag-checkered"></i>
+                            </div>
+                            <h3>Достижение цели</h3>
+                            <p>Завершение проектов, видимые результаты</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'learning')">
+                            <div class="option-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Обучение</h3>
+                            <p>Освоение новых навыков, получение знаний</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'helping')">
+                            <div class="option-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3>Помощь другим</h3>
+                            <p>Волонтерство, поддержка близких</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'creating')">
+                            <div class="option-icon">
+                                <i class="fas fa-hammer"></i>
+                            </div>
+                            <h3>Создание вещей</h3>
+                            <p>Работа руками, конструирование</p>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-buttons">
+                        <button class="btn btn-back" onclick="prevPage()">
+                            <i class="fas fa-arrow-left"></i> Назад
+                        </button>
+                        <button class="btn" onclick="nextPage()">
+                            Далее <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вопрос 3 -->
+            <div class="page" id="page4">
+                <div class="page-content question-page">
+                    <div class="question-header">
+                        <span class="question-number">Вопрос 3 из 6</span>
+                        <h2>Где вам комфортнее заниматься?</h2>
+                        <div class="question-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 'home')">
+                            <div class="option-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3>Дома</h3>
+                            <p>В уютной домашней обстановке</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'nature')">
+                            <div class="option-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <h3>На природе</h3>
+                            <p>В парке, в лесу, на открытом воздухе</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'studio')">
+                            <div class="option-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3>В специальном месте</h3>
+                            <p>Студия, спортзал, мастерская</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'anywhere')">
+                            <div class="option-icon">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <h3>Везде</h3>
+                            <p>Могу заниматься где угодно</p>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-buttons">
+                        <button class="btn btn-back" onclick="prevPage()">
+                            <i class="fas fa-arrow-left"></i> Назад
+                        </button>
+                        <button class="btn" onclick="nextPage()">
+                            Далее <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вопрос 4 -->
+            <div class="page" id="page5">
+                <div class="page-content question-page">
+                    <div class="question-header">
+                        <span class="question-number">Вопрос 4 из 6</span>
+                        <h2>Сколько времени готовы уделять?</h2>
+                        <div class="question-icon">
+                            <i class="fas fa-hourglass-half"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 'little')">
+                            <div class="option-icon">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                            <h3>Несколько часов в месяц</h3>
+                            <p>Для расслабления, без обязательств</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'moderate')">
+                            <div class="option-icon">
+                                <i class="fas fa-calendar-week"></i>
+                            </div>
+                            <h3>Несколько часов в неделю</h3>
+                            <p>Регулярные занятия</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'much')">
+                            <div class="option-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <h3>Много времени</h3>
+                            <p>Готов посвящать значительную часть времени</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'flexible')">
+                            <div class="option-icon">
+                                <i class="fas fa-random"></i>
+                            </div>
+                            <h3>По настроению</h3>
+                            <p>Иногда интенсивно, иногда перерывы</p>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-buttons">
+                        <button class="btn btn-back" onclick="prevPage()">
+                            <i class="fas fa-arrow-left"></i> Назад
+                        </button>
+                        <button class="btn" onclick="nextPage()">
+                            Далее <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вопрос 5 -->
+            <div class="page" id="page6">
+                <div class="page-content question-page">
+                    <div class="question-header">
+                        <span class="question-number">Вопрос 5 из 6</span>
+                        <h2>Что хотите получить от хобби?</h2>
+                        <div class="question-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 'stress_relief')">
+                            <div class="option-icon">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <h3>Расслабление</h3>
+                            <p>Снятие стресса, отдых от рутины</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'skill')">
+                            <div class="option-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3>Новый навык</h3>
+                            <p>Приобретение полезных умений</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'socialize')">
+                            <div class="option-icon">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <h3>Новые знакомства</h3>
+                            <p>Расширение круга общения</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'income')">
+                            <div class="option-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <h3>Дополнительный доход</h3>
+                            <p>Монетизация увлечения</p>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-buttons">
+                        <button class="btn btn-back" onclick="prevPage()">
+                            <i class="fas fa-arrow-left"></i> Назад
+                        </button>
+                        <button class="btn" onclick="nextPage()">
+                            Далее <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вопрос 6 -->
+            <div class="page" id="page7">
+                <div class="page-content question-page">
+                    <div class="question-header">
+                        <span class="question-number">Вопрос 6 из 6</span>
+                        <h2>Какой бюджет готовы выделить?</h2>
+                        <div class="question-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 'minimal')">
+                            <div class="option-icon">
+                                <i class="fas fa-piggy-bank"></i>
+                            </div>
+                            <h3>Минимальный</h3>
+                            <p>Бесплатные или почти бесплатные варианты</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'moderate_budget')">
+                            <div class="option-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <h3>Умеренный</h3>
+                            <p>Готов платить за материалы, занятия</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'significant')">
+                            <div class="option-icon">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <h3>Значительный</h3>
+                            <p>Готов инвестировать в оборудование</p>
+                        </div>
+                        
+                        <div class="option" onclick="selectOption(this, 'no_limit')">
+                            <div class="option-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <h3>Неограниченный</h3>
+                            <p>Главное — удовольствие</p>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-buttons">
+                        <button class="btn btn-back" onclick="prevPage()">
+                            <i class="fas fa-arrow-left"></i> Назад
+                        </button>
+                        <button class="btn result-btn" onclick="showResults()">
+                            Узнать результат <i class="fas fa-award"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Страница результатов -->
+            <div class="page" id="resultsPage">
+                <div class="page-content results-page">
+                    <div class="results-header">
+                        <div class="result-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h1>Ваше идеальное хобби!</h1>
+                    </div>
+                    
+                    <!-- Основное хобби -->
+                    <div class="main-result">
+                        <div class="main-hobby">
+                            <div class="hobby-icon">
+                                <i class="fas fa-camera" id="mainHobbyIcon"></i>
+                            </div>
+                            <div class="hobby-info">
+                                <h2 id="mainHobbyName">Фотография</h2>
+                                <p id="mainHobbyDesc">
+                                    Искусство создания изображений. Развивает художественный вкус и внимание к деталям.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag">Творческое</span>
+                                    <span class="tag">Техническое</span>
+                                    <span class="tag">Мобильное</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Альтернативы -->
+                    <div class="alternatives">
+                        <h3>Похожие варианты:</h3>
+                        <div class="alt-cards">
+                            <div class="alt-card">
+                                <div class="alt-icon">
+                                    <i class="fas fa-paint-brush" id="altIcon1"></i>
+                                </div>
+                                <h4 id="altName1">Рисование</h4>
+                                <p id="altDesc1">Выражение идей через искусство</p>
+                            </div>
+                            
+                            <div class="alt-card">
+                                <div class="alt-icon">
+                                    <i class="fas fa-hiking" id="altIcon2"></i>
+                                </div>
+                                <h4 id="altName2">Пеший туризм</h4>
+                                <p id="altDesc2">Исследование природы</p>
+                            </div>
+                            
+                            <div class="alt-card">
+                                <div class="alt-icon">
+                                    <i class="fas fa-utensils" id="altIcon3"></i>
+                                </div>
+                                <h4 id="altName3">Кулинария</h4>
+                                <p id="altDesc3">Искусство приготовления пищи</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Рекомендация -->
+                    <div class="recommendation">
+                        <p id="personalizedText">
+                            На основе ваших ответов мы подобрали фотографию как идеальное хобби. Она сочетает творчество, технику и может адаптироваться под ваш график.
+                        </p>
+                    </div>
+                    
+                    <!-- Кнопки -->
+                    <div class="result-buttons">
+                        <button class="btn btn-back" onclick="restartTest()">
+                            <i class="fas fa-redo"></i> Пройти снова
+                        </button>
+                        <button class="btn" onclick="shareResults()">
+                            <i class="fas fa-share-alt"></i> Поделиться
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
